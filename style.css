@@ -1,4 +1,4 @@
-* {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -324,6 +324,76 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow: hidden; /* Important pour cacher les parties d'arcs qui dépassent */
+        }
+
+        /* Container pour les arcs - ajouté pour l'effet */
+        .arc-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            pointer-events: none; /* Pour ne pas interférer avec les clics */
+        }
+
+        /* Styles des arcs */
+        .arc {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        /* Positionnement des arcs - AJUSTEMENT pour quart de cercle parfait */
+        .arc-1 {
+            right: -200px;
+            top: -40px;
+            width: 400px;
+            height: 400px;
+        }
+        
+        .arc-2 {
+            right: -171px;
+            top: -10px;
+            width: 342px;
+            height: 342px;
+        }
+        
+        .arc-3 {
+            right: -142px;
+            top: 20px;
+            width: 285px;
+            height: 285px;
+        }
+        
+        .arc-4 {
+            right: -114px;
+            top: 50px;
+            width: 228px;
+            height: 228px;
+        }
+        
+        .arc-5 {
+            right: -85px;
+            top: 80px;
+            width: 171px;
+            height: 171px;
+        }
+        
+        .arc-6 {
+            right: -57px;
+            top: 110px;
+            width: 114px;
+            height: 114px;
+        }
+        
+        .arc-7 {
+            right: -28px;
+            top: 140px;
+            width: 57px;
+            height: 57px;
         }
 
         .service-card-icon {
@@ -338,6 +408,7 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            z-index: 10; /* Au-dessus des arcs */
         }
 
         .service-card-icon img {
@@ -353,6 +424,8 @@
             justify-content: center;
             padding-right: 60px;
             margin-top: 10px;
+            position: relative;
+            z-index: 10; /* Au-dessus des arcs */
         }
 
         .service-card-content h3 {
@@ -382,6 +455,8 @@
             width: calc(100% - 20px);
             align-self: flex-start;
             margin-top: 10px;
+            position: relative;
+            z-index: 10; /* Au-dessus des arcs */
         }
 
         .service-card-button:hover {
@@ -483,6 +558,56 @@
                 font-size: clamp(11px, 1vw, 13px);
                 border-radius: clamp(15px, 1.5vw, 20px);
                 width: calc(100% - clamp(15px, 1.5vw, 20px));
+            }
+
+            /* Responsive pour les arcs - AJUSTEMENT pour quart de cercle parfait */
+            .arc-1 {
+                right: clamp(-170px, -20vw, -200px);
+                top: clamp(-30px, -4vw, -40px);
+                width: clamp(340px, 40vw, 400px);
+                height: clamp(340px, 40vw, 400px);
+            }
+            
+            .arc-2 {
+                right: clamp(-145px, -17vw, -171px);
+                top: clamp(-5px, -1vw, -10px);
+                width: clamp(290px, 34vw, 342px);
+                height: clamp(290px, 34vw, 342px);
+            }
+            
+            .arc-3 {
+                right: clamp(-120px, -14vw, -142px);
+                top: clamp(15px, 2vw, 20px);
+                width: clamp(240px, 28vw, 285px);
+                height: clamp(240px, 28vw, 285px);
+            }
+            
+            .arc-4 {
+                right: clamp(-97px, -11vw, -114px);
+                top: clamp(40px, 5vw, 50px);
+                width: clamp(194px, 23vw, 228px);
+                height: clamp(194px, 23vw, 228px);
+            }
+            
+            .arc-5 {
+                right: clamp(-72px, -8.5vw, -85px);
+                top: clamp(65px, 8vw, 80px);
+                width: clamp(145px, 17vw, 171px);
+                height: clamp(145px, 17vw, 171px);
+            }
+            
+            .arc-6 {
+                right: clamp(-48px, -5.7vw, -57px);
+                top: clamp(90px, 11vw, 110px);
+                width: clamp(97px, 11vw, 114px);
+                height: clamp(97px, 11vw, 114px);
+            }
+            
+            .arc-7 {
+                right: clamp(-24px, -2.8vw, -28px);
+                top: clamp(115px, 14vw, 140px);
+                width: clamp(48px, 5.7vw, 57px);
+                height: clamp(48px, 5.7vw, 57px);
             }
         }
 
